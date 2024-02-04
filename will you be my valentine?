@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will You Be My Valentine?</title>
+  <style>
+    #message {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Will you be my valentine?</h2>
+
+<button onclick="handleResponse('yes')" id="yesBtn">Yes</button>
+<button onclick="handleResponse('no')" id="noBtn">No</button>
+
+<div id="message"></div>
+
+<script>
+let clicks = { yes: 0, no: 0 };
+
+function handleResponse(response) {
+  clicks[response]++;
+
+  if (response === 'yes') {
+    document.getElementById('message').innerHTML = '<img src="https://placebear.com/150/150" alt="Mocha Bear 1"> <img src="https://placebear.com/150/150" alt="Mocha Bear 2"><br>Hug and Kiss!';
+    document.getElementById('noBtn').style.fontSize = '16px';
+    document.getElementById('yesBtn').style.fontSize = ${clicks.yes * 4 + 16}px;
+  } else if (response === 'no') {
+    document.getElementById('message').innerHTML = 'Please<br>Please say yes<br>Please kidd<br>Firse soch lo<br>Ro dunga mai, please yes krdo!';
+    document.getElementById('yesBtn').style.fontSize = '16px';
+    document.getElementById('noBtn').style.fontSize = ${clicks.no * 4 + 16}px;
+  }
+}
+</script>
+
+</body>
+</html>
